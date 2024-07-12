@@ -1,9 +1,5 @@
+import 'package:cognix_chest_xray/main.dart';
 import 'package:flutter/material.dart';
-import 'package:example_app/main.dart';
-
-const primary = Color(0xff4268b0);
-const background = Color(0xffcde2f5);
-
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({super.key});

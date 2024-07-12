@@ -1,6 +1,7 @@
 import 'dart:io';
+
+import 'package:cognix_chest_xray/Nishkarsh/usermenu.dart';
 import 'package:flutter/material.dart';
-import 'package:example_app/usermenu.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ChooseImageScreen extends StatefulWidget {
@@ -22,7 +23,7 @@ class _ChooseImageScreenState extends State<ChooseImageScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              margin: EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               width: 300,
               height: 200,
               decoration: BoxDecoration(
@@ -55,7 +56,9 @@ class _ChooseImageScreenState extends State<ChooseImageScreen> {
                   width: 125,
                   height: 50,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: const Text('Cancel'),
                   ),
                 ),

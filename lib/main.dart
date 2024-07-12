@@ -1,15 +1,9 @@
-// ignore_for_file: unused_import
-
-import 'package:example_app/dummy.dart';
-import 'package:example_app/profileheader.dart';
-import 'package:example_app/reset_password_page.dart';
+import 'package:cognix_chest_xray/Nishkarsh/chooseimage.dart';
+import 'package:cognix_chest_xray/Nishkarsh/uploadprompt.dart';
+import 'package:cognix_chest_xray/Saumya/forgot_password_page.dart';
+import 'package:cognix_chest_xray/Saumya/login_page.dart';
+import 'package:cognix_chest_xray/Saumya/reset_password_page.dart';
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'forgot_password_page.dart';
-import 'package:example_app/chooseimage.dart';
-import 'package:example_app/uploadimage.dart';
-import 'package:example_app/uploadprompt.dart';
-import 'package:example_app/usermenu.dart';
 import 'package:flutter/services.dart';
 
 void main() {
@@ -18,7 +12,7 @@ void main() {
 
 const primary = Color(0xff4268b0);
 const background = Color(0xffcde2f5);
-
+const backendURL = 'http://51.20.3.117';
 
 
 class MyApp extends StatelessWidget {
@@ -61,19 +55,15 @@ class MyApp extends StatelessWidget {
       // ),
       initialRoute: 'login/',
       routes: {
-        //ChooseImageScreen
-        //ProfileHeader
-        'chooseimagescreeen/': (context) => ChooseImageScreen(),
-        'forgot-password/': (context) => ForgotPasswordPage(),
         'login/' : (context) => const LoginPage(),
-        'dummy-screen/' : (context) => const MyDummy(),
-        'reset-pswd/' : (context) => ResetPasswordPage(email: 'email',), 
-        'profileheader/': (context) => ProfileHeader(),
+        'patient_menu/': (context) => const UploadPromptScreen(),
+        'upload_pic/': (context) => const ChooseImageScreen(),
+        'forgot-password/': (context) => ForgotPasswordPage(),
+        // 'dummy-screen/' : (context) => const MyDummy(),
+        'reset-pswd/' : (context) => const ResetPasswordPage(email: 'email',), 
+        // 'profileheader/': (context) => ProfileHeader(),
 
       },
     );
   }
 }
-      
-//snm11feb@gmail.com
-//snm11feb@123

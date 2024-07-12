@@ -1,12 +1,9 @@
 import 'dart:convert';
-import 'package:example_app/reset_password_page.dart';
-import 'package:example_app/user_service.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:example_app/save_data.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
-  ForgotPasswordPage({super.key});
+  const ForgotPasswordPage({super.key});
   
   
   @override
@@ -69,12 +66,13 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         // Handle storing the token or user data as needed
         // Navigate to next screen upon successful login
         // print('mobile_num : ${_user.mobileNum}');
-        Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => ResetPasswordPage(email: _emailController.text.trim()),
-        ),
-      ); // Replace with your dummy screen route
+        Navigator.pushNamed(context, 'reset-pswd/');
+        // Navigator.push(
+        // context,
+        // MaterialPageRoute(
+        //   builder: (context) => ResetPasswordPage(email: _emailController.text.trim()),
+        // ),
+      // ); // Replace with your dummy screen route
         print('otp sent. Token: $token');
       } else if (response.statusCode == 401 || response.statusCode == 404) {
         // Unauthorized - Incorrect credentials

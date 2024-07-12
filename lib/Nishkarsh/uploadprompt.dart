@@ -1,14 +1,7 @@
-// ignore_for_file: unused_import
-
+import 'package:cognix_chest_xray/Nishkarsh/profileheader.dart';
+import 'package:cognix_chest_xray/Nishkarsh/usermenu.dart';
+import 'package:cognix_chest_xray/main.dart';
 import 'package:flutter/material.dart';
-import 'package:example_app/main.dart';
-import 'package:example_app/profileheader.dart';
-import 'package:example_app/usermenu.dart';
-
-const primary = Color(0xff4268b0);
-const background = Color(0xffcde2f5);
-
-
 
 class UploadPromptScreen extends StatelessWidget {
   const UploadPromptScreen({super.key});
@@ -77,7 +70,9 @@ class UploadButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'upload_pic/');
+              },
               icon: const Icon(Icons.camera_alt),
               label: const Text('Upload Pic'),
               style: ElevatedButton.styleFrom(

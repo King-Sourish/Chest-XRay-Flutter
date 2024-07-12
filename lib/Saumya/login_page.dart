@@ -1,11 +1,10 @@
-import 'package:example_app/save_data.dart';
-import 'package:example_app/user_service.dart';
-import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:cognix_chest_xray/main.dart';
+import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  const LoginPage({super.key});
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -17,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   bool _isPasswordVisible = false;
 
   Future<void> _login() async {
-    String url = 'http://51.20.3.117/auth/login/'; // Replace with your backend URL
+    String url = '$backendURL/auth/login/'; // Replace with your backend URL
 
     try {
       final response = await http.post(
@@ -49,9 +48,8 @@ class _LoginPageState extends State<LoginPage> {
         String token = responseData['token'];
         // Handle storing the token or user data as needed
         // Navigate to next screen upon successful login
-        Navigator.pushNamed(context, 'dummy-screen/'); // Replace with your dummy screen route
         print('Login successful. Token: $token');
-        // print('Login successful. User: ${user.name}');
+        Navigator.pushNamed(context,'patient_menu/'); // Replace with your dummy screen route
       } else if (response.statusCode == 401 || response.statusCode == 404) {
         // Unauthorized - Incorrect credentials
         showDialog(
@@ -83,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
         builder: (BuildContext context) {
           return AlertDialog(
             title: const Text("Error"),
-            content: const Text("Failed to connect to the server. Please check your connection."),
+            content: Text("$e"),
             actions: <Widget>[
               TextButton(
                 child: const Text("OK"),

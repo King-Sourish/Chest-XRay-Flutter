@@ -1,7 +1,5 @@
+import 'package:cognix_chest_xray/Nishkarsh/profileheader.dart';
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:example_app/main.dart';
-import 'package:example_app/profileheader.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
