@@ -32,23 +32,23 @@ class Doctor {
     this.profilePhotoUrl,
   });
 
-  factory Doctor.fromJson(Map<String, dynamic> json, param1) {
-    return Doctor(
-      staticId: json['static_id'],
-      authUser: json['auth_user'],
-      name: json['name'],
-      email: json['email'],
-      mobileNum: json['mobile_num'],
-      dob: DateTime.parse(json['dob']),
-      sex: json['sex'],
-      address: json['address'],
-      pincode: json['pincode'],
-      age: json['age'],
-      about: json['about'],
-      description: json['description'],
-      rating: (json['rating'] as num?)?.toDouble() ?? 0.0,
-      profilePhotoUrl: json['profile_photo'],
-    );
-  }
+factory Doctor.fromJson(Map<String, dynamic> json) {
+  return Doctor(
+    staticId: json['static_id'],
+    authUser: json['auth_user'],
+    name: json['name'],
+    email: json['email'],
+    mobileNum: json['mobile_num'],
+    dob: DateTime.parse(json['dob']),
+    sex: json['sex'],
+    address: json['address'],
+    pincode: json['pincode'],
+    age: json['age'],
+    about: json['about'],
+    description: json['description'],
+    rating: json['rating'].toDouble(),
+    profilePhotoUrl: json['profile_photo'],
+  );
+}
   
 }

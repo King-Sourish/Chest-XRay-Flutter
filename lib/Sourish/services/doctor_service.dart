@@ -1,7 +1,8 @@
 // lib/services/doctor_service.dart
 import 'dart:convert';
+import 'package:cognix_chest_xray/Sourish/Screens/doctor_model.dart';
 import 'package:http/http.dart' as http;
-import '../screens/doctor_model.dart';
+
 
 class DoctorService {
   final String apiUrl = "http://127.0.0.1:8000/doctors/";
@@ -49,6 +50,16 @@ class DoctorService {
       throw Exception('Failed to submit review');
     }
   }
+
+Future<Doctor> fetchDoctorById(String id) async {
+  final response = await http.get(Uri.parse('$apiUrl$id/'));
+  if (response.statusCode == 200) {
+    Map<String, dynamic> jsonData = json.decode(response.body);
+    return Doctor.fromJson(jsonData); // Pass only the JSON data
+  } else {
+    throw Exception('Failed to load doctor');
+  }
+}
 }
 
 class Review {
