@@ -3,6 +3,8 @@ import 'package:cognix_chest_xray/Nishkarsh/uploadprompt.dart';
 import 'package:cognix_chest_xray/Saumya/forgot_password_page.dart';
 import 'package:cognix_chest_xray/Saumya/login_page.dart';
 import 'package:cognix_chest_xray/Saumya/reset_password_page.dart';
+import 'package:cognix_chest_xray/Sourish/Screens/doctor_detail_screen.dart';
+import 'package:cognix_chest_xray/Sourish/Screens/doctor_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -62,7 +64,7 @@ class MyApp extends StatelessWidget {
         // 'dummy-screen/' : (context) => const MyDummy(),
         'reset-pswd/' : (context) => const ResetPasswordPage(email: 'email',), 
         // 'profileheader/': (context) => ProfileHeader(),
-
+        'doctor_detail/': (context) => DoctorDetailScreen(doctor: ModalRoute.of(context)!.settings.arguments as Doctor),
       },
     );
   }
