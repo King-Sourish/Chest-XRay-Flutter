@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 
 class DoctorService {
-  final String apiUrl = "http://127.0.0.1:8000/doctors/";
+  final String apiUrl = "http://51.20.3.117/doctors/";
   // final String apiUrl = "http://10.0.2.2:8000/doctors/";
 
   Future<List<Doctor>> fetchDoctors() async {
@@ -31,7 +31,7 @@ class DoctorService {
 
   Future<bool> submitReview(String doctorId, String patientId, String reviewText, int rating) async {
     final response = await http.post(
-      Uri.parse("http://127.0.0.1:8000/submit_review/"),
+      Uri.parse("http://51.20.3.117/submit_review/"),
       // Uri.parse("http://10.0.2.2:8000/submit_review/"),
       headers: {"Content-Type": "application/json"},
 
